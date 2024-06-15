@@ -9,7 +9,9 @@ func SplitLogLine(text string) []string {
 	// the pattern mean star withe < and end with >
 	// contain all thos caracter ~,*,=,-,
 	// + mean can contain one or more than caracter of pattern
-	re := regexp.MustCompile(`<[~*=\-]+>`)
+	//re := regexp.MustCompile(`<[~*=-]*>`)
+	// * mean zero or more
+	re := regexp.MustCompile(`<[~*=-]*>`)
 	return re.Split(text, -1)
 
 }
